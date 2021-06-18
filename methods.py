@@ -9,7 +9,6 @@ class Methods:
         request = json.loads(self.rfile.read(length))
         self._set_headers()
         with open("db/users.json", "r+") as file:
-            # data = {"users": []}
             data = json.load(file)
             if request["user"] not in data["users"]:
                 data["users"].append(request["user"])
